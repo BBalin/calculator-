@@ -10,22 +10,22 @@
     <div id="calculator">
         <input id="display" readonly>
         <div id="btn-container">
-            <button onclick="appendToDisplay('1')" id="btn-one">1</button>
-            <button onclick="appendToDisplay('2')" id="btn-two">2</button>
-            <button onclick="appendToDisplay('3')" id="btn-three">3</button>
-            <button onclick="appendToDisplay('+')" id="btn-plus">+</button>
-            <button onclick="appendToDisplay('4')" id="btn-four">4</button>
-            <button onclick="appendToDisplay('5')" id="btn-five">5</button>
-            <button onclick="appendToDisplay('6')" id="btn-six">6</button>
-            <button onclick="appendToDisplay('-')" id="btn-minus">-</button>
-            <button onclick="appendToDisplay('7')" id="btn-seven">7</button>
-            <button onclick="appendToDisplay('8')" id="btn-eight">8</button>
-            <button onclick="appendToDisplay('9')" id="btn-nine">9</button>
-            <button onclick="appendToDisplay('*')" id="btn-multiply">*</button>
+            <button onclick="getNumber(1)" id="btn-one">1</button>
+            <button onclick="getNumber(2)" id="btn-two">2</button>
+            <button onclick="getNumber(3)" id="btn-three">3</button>
+            <button onclick="getOperator('+')" id="btn-plus">+</button>
+            <button onclick="getNumber(4)" id="btn-four">4</button>
+            <button onclick="getNumber(5)" id="btn-five">5</button>
+            <button onclick="getNumber(6)" id="btn-six">6</button>
+            <button onclick="getOperator('-')" id="btn-minus">-</button>
+            <button onclick="getNumber(7)" id="btn-seven">7</button>
+            <button onclick="getNumber(8)" id="btn-eight">8</button>
+            <button onclick="getNumber(9)" id="btn-nine">9</button>
+            <button onclick="getOperator('*')" id="btn-multiply">*</button>
             <button onclick="clearDisplay()" id="btn-clear">C</button>
-            <button onclick="appendToDisplay('0')" id="btn-zero">0</button>
+            <button onclick="getNumber('0')" id="btn-zero">0</button>
             <button onclick="calculate()" id="btn-calculate">=</button>
-            <button onclick="appendToDisplay('/')" id="btn-divide">/</button>
+            <button onclick="getOperator('/')" id="btn-divide">/</button>
             
         </div>
     </div>

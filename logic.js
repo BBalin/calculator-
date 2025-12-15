@@ -1,30 +1,52 @@
 const display = document.getElementById("display");
-const zero = document.getElementById("btn-zero");
-const one = document.getElementById("btn-one");
-const two = document.getElementById("btn-two");
-const three = document.getElementById("btn-three");
-const four = document.getElementById("btn-four");
-const five = document.getElementById("btn-five");
-const six = document.getElementById("btn-six");
-const seven = document.getElementById("btn-seven");
-const eight = document.getElementById("btn-eight");
-const nine = document.getElementById("btn-nine");
-const plus = document.getElementById("btn-plus");
-const minus = document.getElementById("btn-minus");
-const multiply = document.getElementById("btn-multiply");
-const divide = document.getElementById("btn-divide");
-const clear = document.getElementById("btn-clear");
-const equals = document.getElementById("btn-calculate");
 
-function appendToDisplay(input) {
-    display.value += input;
+let firstNumber
+let secondNumber
+let step = 0;
+let operation
+let result = 0;
+
+let numArray = [];
+let secondNumArray = [];
+
+function getNumber(num) {
+    if (step === 0 || step === 1) {
+        numArray.push(num);
+        step = 1;
+        firstNumber = Number(numArray.join(''));
+        display.value = firstNumber;
+    } else if (step === 2) {
+        secondNumArray.push(num);
+        secondNumber = Number(secondNumArray.join(''));
+        display.value = secondNumber;
+    }
+};
+
+function getOperator(op) {
+    step = 2;
+    operation = op;
 };
 
 function calculate() {
-    
+    if (operation === "+") {
+        result = firstNumber + secondNumber;
+    } else if (operation === "-") {
+        result = firstNumber - secondNumber;
+    } else if (operation === "*") {
+        result = firstNumber * secondNumber; 
+    } else if (operation === "/") {
+        result = firstNumber / secondNumber;
+    } else {
+        return "ERROR";
+    };
 
+    display.value = result;
 };
 
+
 function clearDisplay() {
+    numArray = [];
+    secondNumArray = [];
+    step = 0;
     display.value = "";
 }
